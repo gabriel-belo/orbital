@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Geist', system-ui, sans-serif;
+    background-color: #0b141c;
+    color: #dae3ee;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b141c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a494b;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #849495;
+  }
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+  input[type='range']::-webkit-slider-track {
+    height: 4px;
+    border-radius: 2px;
+    background: #3a494b;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #00dbe7;
+    box-shadow: 0 0 8px #00dbe780;
+    margin-top: -6px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[#182028]/80 backdrop-blur-sm border border-[#3a494b]/50 rounded-xl;
+  }
+  .glass-card-high {
+    @apply bg-[#222b33]/80 backdrop-blur-sm border border-[#3a494b]/60 rounded-xl;
+  }
+  .label-caps {
+    @apply font-heading text-[11px] font-semibold tracking-[0.1em] uppercase;
+  }
+  .btn-primary {
+    @apply bg-[#00dbe7]/20 hover:bg-[#00dbe7]/30 border border-[#00dbe7]/50 hover:border-[#00dbe7] text-[#00dbe7] font-heading font-semibold tracking-widest text-xs py-2 px-4 rounded-lg transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-[#93000a]/30 hover:bg-[#93000a]/50 border border-[#ffb4ab]/40 hover:border-[#ffb4ab] text-[#ffb4ab] font-heading font-semibold tracking-widest text-xs py-2 px-4 rounded-lg transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply border border-[#3a494b] hover:border-[#849495] text-[#b9cacb] hover:text-[#dae3ee] font-heading font-semibold tracking-widest text-xs py-2 px-4 rounded-lg transition-all duration-200;
+  }
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+  .status-dot-online {
+    @apply status-dot bg-[#00dbe7] shadow-[0_0_6px_#00dbe7];
+  }
+  .status-dot-warning {
+    @apply status-dot bg-[#fbbc04] shadow-[0_0_6px_#fbbc04];
+  }
+  .status-dot-error {
+    @apply status-dot bg-[#ffb4ab] shadow-[0_0_6px_#ffb4ab];
+  }
+  .status-dot-offline {
+    @apply status-dot bg-[#849495];
+  }
+}
+
+/* Radar ring animation glow */
+.radar-ring {
+  border: 1px solid rgba(0, 219, 231, 0.15);
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* Scan overlay for camera */
+.scan-overlay::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00dbe780, transparent);
+  animation: scan-line 2.5s linear infinite;
+  top: 0;
+}
+
+/* Shimmer for loading states */
+.shimmer {
+  background: linear-gradient(90deg, #182028 25%, #222b33 50%, #182028 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
