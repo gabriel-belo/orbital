@@ -64,7 +64,7 @@ Essa abordagem reduz significativamente os riscos de ataques de força bruta.
 ## Auditoria e Monitoramento
 Eventos críticos são registrados automaticamente através do módulo de auditoria.
 
-![Logs de Auditoria](./assets/Captura_de_tela_2026-06-09_101531 (3).png)
+![Logs de Auditoria](./assets/Captura_de_tela_2026-06-09_101531.png)
 
 ## Análise de Riscos
 Foi utilizada uma adaptação simplificada da metodologia STRIDE para identificação das principais ameaças.
@@ -147,7 +147,7 @@ A criptografia é realizada utilizando o algoritmo AES-GCM, considerado atualmen
 
 ***Figura 1 – Implementação da criptografia AES-GCM***
 
-![Criptografia AES-GCM](./assets/AES-GCM(3).png)
+![Criptografia AES-GCM](./assets/AES-GCM.png)
 
 ## Configuração da Proteção de Senhas
 As credenciais dos usuários são protegidas utilizando PBKDF2 com SHA-256 e 120.000 iterações.
